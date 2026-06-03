@@ -121,4 +121,329 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.15}}
 .live-badge-text{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--red-tw)}
 .live-title{font-family:'Noto Serif TC',serif;font-size:clamp(30px,3vw,42px);font-weight:900;color:var(--white);line-height:1.3;margin-bottom:18px}
-.live-desc{font-size:19px;color:var(--white-dim);l
+.live-desc{font-size:19px;color:var(--white-dim);line-height:2}
+.schedule{display:flex;flex-direction:column;gap:16px}
+.schedule-item{display:flex;align-items:flex-start;gap:18px;padding:18px;border:0.5px solid var(--border);background:var(--surface);box-shadow:0 1px 8px rgba(30,80,180,0.04)}
+.schedule-day{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);min-width:50px;padding-top:2px}
+.schedule-time{font-size:18px;color:var(--white-dim);display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.schedule-time::before{content:'';display:block;width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;opacity:0.5}
+.forum-box{padding:18px 20px;border:0.5px solid var(--border-gold);background:var(--chip-bg)}
+.forum-box-label{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.forum-box-desc{font-size:18px;color:var(--white-dim);line-height:1.8}
+.forum-box-desc strong{color:var(--white);font-weight:500}
+
+/* CTA */
+.cta-section{padding:120px 0}
+.cta-inner{max-width:580px;margin:0 auto;padding:0 40px;text-align:center}
+.cta-line{width:1px;height:72px;background:linear-gradient(to bottom,transparent,var(--gold));margin:0 auto 48px}
+.cta-eyebrow{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.cta-title{font-family:'Noto Serif TC',serif;font-size:clamp(36px,5vw,58px);font-weight:900;color:var(--white);line-height:1.2;margin-bottom:20px}
+.cta-desc{font-size:22px;color:var(--white-dim);line-height:1.95;margin-bottom:52px;max-width:440px;margin-left:auto;margin-right:auto}
+.btn-group{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:28px}
+.cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:16px 40px;font-family:'Noto Sans TC',sans-serif;font-size:19px;font-weight:500;letter-spacing:0.04em;text-decoration:none;cursor:pointer;border:none;transition:all 0.2s ease;width:300px}
+.cta-btn.ig{background:var(--gold);color:#ffffff}
+.cta-btn.ig:hover{background:#1240A0;transform:translateY(-2px);box-shadow:0 10px 36px rgba(26,79,190,0.3)}
+.cta-btn.tiktok{background:transparent;color:var(--white);border:1px solid rgba(13,27,62,0.25)}
+.cta-btn.tiktok:hover{border-color:var(--gold);background:var(--chip-bg);transform:translateY(-2px)}
+.btn-icon-svg{width:20px;height:20px;flex-shrink:0}
+.cta-sub{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.15em;color:var(--white-faint);line-height:2}
+
+/* FOOTER */
+.footer{border-top:0.5px solid var(--border);padding:36px 40px;text-align:center;background:var(--surface)}
+.footer p{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.1em;color:rgba(13,27,62,0.28)}
+
+/* VIDEO SECTION - 改為直式影片優化 */
+.video-section{padding:88px 0;background:linear-gradient(160deg,#1A4FBE 0%,#1240A0 40%,#0D2D80 100%);position:relative;overflow:hidden}
+.video-section::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1' fill='rgba(255,255,255,0.06)'/%3E%3C/svg%3E");pointer-events:none}
+.video-inner{max-width:800px;margin:0 auto;padding:0 40px;text-align:center}
+@media(max-width:600px){.video-inner{padding:0 24px}}
+.video-label{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:16px}
+.video-title{font-family:'Noto Serif TC',serif;font-size:clamp(30px,4vw,50px);font-weight:900;color:#ffffff;line-height:1.25;margin-bottom:12px}
+.video-title .vt-accent{color:#93C5FD}
+.video-subtitle{font-size:19px;color:rgba(255,255,255,0.72);line-height:2;margin-bottom:44px;max-width:520px;margin-left:auto;margin-right:auto}
+
+/* 直式影片外層容器 */
+.video-embed-container {
+  max-width: 380px; /* 控制影片最大寬度，避免電腦版太大 */
+  margin: 0 auto 32px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.15);
+  /* 設定直式比例 (9:16) */
+  aspect-ratio: 9 / 16;
+}
+.video-embed-container video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* 確保影片填滿容器 */
+}
+
+.video-cta{display:inline-flex;align-items:center;gap:10px;padding:14px 36px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.3);color:#ffffff;text-decoration:none;font-family:'Noto Sans TC',sans-serif;font-size:17px;font-weight:500;letter-spacing:0.04em;transition:all 0.2s ease;backdrop-filter:blur(8px)}
+.video-cta:hover{background:rgba(255,255,255,0.22);border-color:rgba(255,255,255,0.6);transform:translateY(-2px)}
+.video-cta-icon{width:18px;height:18px;flex-shrink:0}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.fade{opacity:0;animation:fadeUp 1s ease forwards}
+.d1{animation-delay:0.1s}.d2{animation-delay:0.3s}.d3{animation-delay:0.5s}.d4{animation-delay:0.7s}.d5{animation-delay:0.9s}
+</style>
+</head>
+<body>
+<div class="glow-orb"></div>
+<div class="page">
+
+<section class="hero">
+  <div class="hero-photo">
+    <img class="hero-photo-img" src="assets/portrait.jpg">
+  </div>
+  <div class="hero-content">
+    <div class="brand-tag fade d1">散戶日記 · iwantmoney16888</div>
+    <div class="hero-eyebrow fade d2">Private Notes · 私密筆記</div>
+    <h1 class="hero-title fade d3">台股要賺錢<br>先過<span class="accent">三道關</span></h1>
+    <p class="hero-desc fade d4">九年實戰、台股為主。<br>這不是課程，不是業配，<br>是我每次進場前必須確認的<br>前提條件。</p>
+    <div class="stats-row fade d4">
+      <div class="stat"><div class="stat-val">9+</div><div class="stat-key">年實戰</div></div>
+      <div class="stat"><div class="stat-val">50%+</div><div class="stat-key">資產成長</div></div>
+      <div class="stat"><div class="stat-val">台股</div><div class="stat-key">主要市場</div></div>
+    </div>
+    <div class="scroll-hint fade d5">往下看</div>
+  </div>
+</section>
+
+<div class="sw">
+  <div class="intro-strip">
+    <div class="mono-label">Before You Read</div>
+    <p class="intro-text">這份筆記我把<strong>第二道關卡完整公開</strong>。<br>其他兩關的細節，留在直播裡說——<br>因為有些東西，見到真人再講才有意義。</p>
+  </div>
+</div>
+
+<div class="sw">
+  <div class="conditions">
+    <div class="cond-header">
+      <div class="cond-num-bg">01</div>
+      <div>
+        <div class="cond-tag">前提條件一</div>
+        <h2 class="cond-title">市場的風<br>你要先看懂方向</h2>
+      </div>
+    </div>
+    <p class="cond-body">很多人看到線型漂亮的個股就想進場，但忘了先看整體市場在哪裡。<strong>市場的方向，決定了你整體的勝率基礎。</strong>這是我踩過最多次的坑。</p>
+    <div class="winrate-viz">
+      <div class="wr-cell on"><div class="wr-pct">~60%</div><div class="wr-label">順風勝率</div></div>
+      <div class="wr-cell off"><div class="wr-pct">~30%</div><div class="wr-label">逆風勝率</div></div>
+    </div>
+    <p class="cond-body">同樣的選股邏輯、同樣的標的，順風和逆風環境下，勝率差距接近 <strong>30 個百分點</strong>。不看市場方向直接選股，你在用一半的勝率和市場對賭。</p>
+    <div class="insight"><p>水往下流的時候，游泳需要消耗更多力氣。<br><strong>先看懂市場的風向，再選個股。</strong>這個順序，我從來不打亂。</p></div>
+    <div class="locked">
+      <div class="lock-wrap">🔒</div>
+      <div class="locked-title">我怎麼判斷風向</div>
+      <div class="locked-sub">這個講出來要配合盤面才有感覺<br>細節留在直播裡說</div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="sw">
+  <div class="conditions">
+    <div class="cond-header">
+      <div class="cond-num-bg">02</div>
+      <div>
+        <div class="cond-tag">前提條件二 · 完整公開</div>
+        <h2 class="cond-title">個股要同時出現<br>三個特定條件</h2>
+      </div>
+    </div>
+    <p class="cond-body">市場方向對了，才輪到看個股。這一關我完整給你——<strong>這三件事必須同時發生，缺一不可。</strong></p>
+
+    <div class="reveal-box">
+      <div class="reveal-title">這招完整攻略</div>
+
+      <div class="reveal-step">
+        <div class="reveal-num">01</div>
+        <div class="reveal-content">
+          <div class="reveal-name">出現長紅棒</div>
+          <div class="reveal-desc">當天K線要是一根明顯的長紅棒（台股紅漲），代表當天有強力買盤大量介入，不是慢慢推上去的，是有人在這裡認真買進。</div>
+        </div>
+      </div>
+
+      <div class="reveal-step">
+        <div class="reveal-num">02</div>
+        <div class="reveal-content">
+          <div class="reveal-name">站上 MA5、MA10、MA20 三條均線</div>
+          <div class="reveal-desc">長紅棒必須同時站上這三條均線的上方。如果只站上一兩條，力道還不夠。三條都站上，代表短中期的持有者都進入獲利狀態。</div>
+        </div>
+      </div>
+
+      <div class="reveal-step">
+        <div class="reveal-num">03</div>
+        <div class="reveal-content">
+          <div class="reveal-name">均線必須多頭排列</div>
+          <div class="reveal-desc">MA5 在最上面，MA10 在中間，MA20 在最下面，由上到下依序排列。這代表不同時間尺度的投資人，目前都是獲利的，拋售意願低，趨勢是健康的多頭結構。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-wrap">
+      <div class="chart-label">三條件同時出現示意（台股紅漲）</div>
+      <svg viewBox="0 0 520 120" style="width:100%;height:auto;display:block">
+        <defs>
+          <linearGradient id="gCR" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#E84057"/>
+            <stop offset="100%" stop-color="#9B2335"/>
+          </linearGradient>
+        </defs>
+        <line x1="0" y1="30" x2="520" y2="30" stroke="rgba(13,27,62,0.06)" stroke-width="1"/>
+        <line x1="0" y1="60" x2="520" y2="60" stroke="rgba(13,27,62,0.06)" stroke-width="1"/>
+        <line x1="0" y1="90" x2="520" y2="90" stroke="rgba(13,27,62,0.06)" stroke-width="1"/>
+        <path d="M0,100 Q90,93 180,84 Q270,74 360,63 Q440,54 520,46" stroke="#E84057" stroke-width="1.8" fill="none" opacity="0.65"/>
+        <path d="M0,88 Q90,80 180,70 Q270,59 360,48 Q440,38 520,28" stroke="#4EA8DE" stroke-width="1.8" fill="none" opacity="0.8"/>
+        <path d="M0,76 Q90,67 180,57 Q270,45 360,34 Q440,24 520,14" stroke="#C9A84C" stroke-width="2.2" fill="none"/>
+        <line x1="490" y1="6" x2="490" y2="58" stroke="#E84057" stroke-width="1.5"/>
+        <rect x="484" y="8" width="12" height="40" fill="url(#gCR)" rx="1"/>
+        <text x="8" y="108" font-family="DM Mono,monospace" font-size="8" fill="rgba(232,64,87,0.65)" letter-spacing="1">MA20</text>
+        <text x="8" y="84" font-family="DM Mono,monospace" font-size="8" fill="rgba(78,168,222,0.75)" letter-spacing="1">MA10</text>
+        <text x="8" y="60" font-family="DM Mono,monospace" font-size="8" fill="rgba(201,168,76,0.9)" letter-spacing="1">MA5</text>
+        <text x="464" y="7" font-family="DM Mono,monospace" font-size="8" fill="rgba(232,64,87,0.9)" letter-spacing="0.5">長紅站上三線</text>
+        <line x1="462" y1="28" x2="484" y2="28" stroke="rgba(232,64,87,0.4)" stroke-width="1" stroke-dasharray="3,2"/>
+      </svg>
+    </div>
+
+    <div class="insight">
+      <p>長紅棒是買盤進場的訊號。三線站上是位置對的確認。均線排列是趨勢健康的確認。<br><strong>三件事同時發生，這個買點的勝率才足夠高。</strong></p>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="sw">
+  <div class="conditions">
+    <div class="cond-header">
+      <div class="cond-num-bg">03</div>
+      <div>
+        <div class="cond-tag">前提條件三</div>
+        <h2 class="cond-title">市場要給出<br>足夠的共識訊號</h2>
+      </div>
+    </div>
+    <p class="cond-body">前兩個條件都符合了，我還需要第三個確認。這個指標是市場上所有人用行動投票的結果——<strong>它是最難被操控、最不容易騙人的指標。</strong></p>
+    <div class="chart-wrap">
+      <div class="chart-label">指標異常放大示意</div>
+      <svg viewBox="0 0 520 90" style="width:100%;height:auto;display:block">
+        <defs>
+          <linearGradient id="gSp" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#C9A84C"/>
+            <stop offset="100%" stop-color="rgba(201,168,76,0.2)"/>
+          </linearGradient>
+        </defs>
+        <rect x="10" y="60" width="30" height="22" fill="rgba(13,27,62,0.09)" rx="1"/>
+        <rect x="52" y="52" width="30" height="30" fill="rgba(13,27,62,0.09)" rx="1"/>
+        <rect x="94" y="63" width="30" height="19" fill="rgba(13,27,62,0.09)" rx="1"/>
+        <rect x="136" y="55" width="30" height="27" fill="rgba(13,27,62,0.09)" rx="1"/>
+        <rect x="178" y="61" width="30" height="21" fill="rgba(13,27,62,0.09)" rx="1"/>
+        <rect x="220" y="57" width="30" height="25" fill="rgba(13,27,62,0.09)" rx="1"/>
+        <rect x="262" y="64" width="30" height="18" fill="rgba(13,27,62,0.09)" rx="1"/>
+        <rect x="304" y="50" width="30" height="32" fill="rgba(13,27,62,0.09)" rx="1"/>
+        <rect x="346" y="59" width="30" height="23" fill="rgba(13,27,62,0.09)" rx="1"/>
+        <rect x="388" y="4" width="30" height="78" fill="url(#gSp)" rx="1"/>
+        <text x="380" y="2" font-family="DM Mono,monospace" font-size="9" fill="rgba(201,168,76,0.85)" letter-spacing="0.5">▲ 異常放大</text>
+        <line x1="0" y1="82" x2="520" y2="82" stroke="rgba(13,27,62,0.07)" stroke-width="1"/>
+      </svg>
+    </div>
+    <p class="cond-body">這個指標的數值，我會和<strong>近期一段時間的平均值</strong>做比較。如果異常程度不夠，就算前兩個條件都符合，我也不進場。</p>
+    <div class="insight"><p>指標縮小是警訊，指標放大才是確認。<br><strong>沒有共識訊號的突破，多半是假突破，進去了就被套。</strong></p></div>
+    <div class="locked">
+      <div class="lock-wrap">🔒</div>
+      <div class="locked-title">這個指標是什麼、門檻在哪裡</div>
+      <div class="locked-sub">放大多少才算夠？跟幾天比？<br>直播裡帶著盤面說才有感覺</div>
+    </div>
+  </div>
+</div>
+
+<div class="video-section">
+  <div class="video-inner">
+    <div class="video-label">直播回顧 · Live Replay</div>
+    <h2 class="video-title">觀看直播<br><span class="vt-accent">了解更多！</span></h2>
+    <p class="video-subtitle">試看我們直播，最新回顧影片在這裡。看盤面實戰示範，掌握三道關的完整邏輯。</p>
+
+    <div class="video-embed-container">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        controls
+        poster="assets/portrait.jpg">
+        <source src="https://ik.imagekit.io/wmb06guhs/MTVideo%20(1).mp4/ik-video.mp4?updatedAt=1779855409297" type="video/mp4">
+        您的瀏覽器不支持 HTML5 影片播放。
+      </video>
+    </div>
+
+    <a href="https://www.tiktok.com/@iwantmoney16888?is_from_webapp=1&sender_device=pc" class="video-cta" target="_blank">
+      <svg class="video-cta-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+      前往觀看直播
+    </a>
+  </div>
+</div>
+
+<div class="live-strip">
+  <div class="live-inner">
+    <div>
+      <div class="live-badge"><div class="live-dot"></div><span class="live-badge-text">定期直播中</span></div>
+      <h2 class="live-title">其他兩關細節<br>直播裡說</h2>
+      <p class="live-desc">第二關我全給你了。第一關和第三關的具體判斷方法，要配合盤面才能說清楚。<br><br>每週二、四，早盤前和收盤後，IG 和 TikTok 同步直播，帶著盤面一起拆。</p>
+    </div>
+    <div class="schedule">
+      <div class="schedule-item">
+        <div class="schedule-day">平日<br>每天</div>
+        <div>
+          <div class="schedule-time">早上 09:00 – 11:00　盤前分析</div>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-day">週二<br>週四</div>
+        <div>
+          <div class="schedule-time">晚上 19:00 – 21:00　盤後覆盤</div>
+        </div>
+      </div>
+      <div class="forum-box">
+        <div class="forum-box-label">直播專屬 · 論壇抽籤</div>
+        <div class="forum-box-desc">直播中有機會抽到<br><strong>價值 NT$2,980 線下技術分析論壇</strong><br>台北 · 台中 · 高雄 三城市場次</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-line"></div>
+    <div class="cta-eyebrow">下一步</div>
+    <h2 class="cta-title">讓我的師兄告訴你<br>真名蕭董</h2>
+    <p class="cta-desc">第二關攻略你拿走了。第一關和第三關的細節，我在直播裡說——因為有些東西，見到真人才講得清楚。</p>
+    <div class="btn-group">
+      <a href="https://www.tiktok.com/@stock60s?is_from_webapp=1&sender_device=pc" class="cta-btn tiktok" target="_blank">
+        <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/>
+        </svg>
+        追蹤 蕭董 @stock60s
+      </a>
+      <a href="https://www.tiktok.com/@iwantmoney16888?is_from_webapp=1&sender_device=pc" class="cta-btn tiktok" target="_blank">
+        <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/>
+        </svg>
+        追蹤 真名 @iwantmoney16888
+      </a>
+    </div>
+    <p class="cta-sub">IG · TikTok 同步直播<br>在任何影片留言「資源」，我自動私訊你更多內容</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>散戶日記 · @iwantmoney16888 · 本筆記為個人投資經驗分享，非投資建議，投資有風險</p>
+</div>
+
+</div>
+</body>
+</html>
